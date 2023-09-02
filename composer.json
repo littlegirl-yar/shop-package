@@ -1,0 +1,46 @@
+{
+    "name": "yaromir/shop-package",
+    "description": "A demo package",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yaromir Usatyuk",
+            "email": "yaromir@gmail.com"
+        }
+    ],
+    "require": {
+        "kmlaravel/laravel-geographical-calculator": "^2.2"
+    },
+    "autoload": {
+        "psr-4":
+        {
+            "Yaromir\\ShopPackage\\": "src",
+            "Yaromir\\ShopPackage\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yaromir\\ShopPackage\\Tests\\": "tests",
+            "Yaromir\\ShopPackage\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-f": "vendor/bin/phpunit --filter"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yaromir\\ShopPackage\\ShopPackageServiceProvider"
+            ],
+            "aliases": {
+                "Exchanger": "Yaromir\\ShopPackage\\Facades\\Exchanger"
+            }
+        }
+    }
+}
